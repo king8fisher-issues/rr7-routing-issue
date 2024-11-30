@@ -1,13 +1,23 @@
+import { Link } from "react-router";
+import CurrentRoute from "~/welcome/CurrentRoute";
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
 
-export function meta({}: Route.MetaArgs) {
+export function meta({ }: Route.MetaArgs) {
   return [
     { title: "New React Router App" },
     { name: "description", content: "Welcome to React Router!" },
   ];
 }
 
+export function action({request, params}: Route.ActionArgs) {
+  console.log("/ is hit")
+  return null;
+}
+
 export default function Home() {
-  return <Welcome />;
+  return <div className="flex flex-col">
+    <CurrentRoute />
+    <Link to={encodeURIComponent("#routeWithHashTag")}>#routeWithHashTag</Link>
+    <Link to={encodeURIComponent("routeWithoutHashTag")}>routeWithHashTag</Link>
+  </div>;
 }
