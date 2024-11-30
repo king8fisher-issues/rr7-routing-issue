@@ -18,6 +18,6 @@ export default function Home() {
   return <div className="flex flex-col">
     <CurrentRoute />
     <Link to={encodeURIComponent("#routeWithHashTag")}>#routeWithHashTag</Link>
-    <Link to={encodeURIComponent("routeWithoutHashTag")}>routeWithHashTag</Link>
+    <Link to={encodeURIComponent("routeWithoutHashTag")}>routeWithoutHashTag</Link>
   </div>;
 }
